@@ -29,8 +29,8 @@ Ex:
       validates :title, presence: true
       validates :age, min: 2, max:50
 
-      self.table_name = 'dogs'
-      self.primary_key = :title
+      #self.table_name = 'dogs'
+      #self.primary_key = :title
 
       protected
     =begin
@@ -50,6 +50,27 @@ Ex:
     =end
 
     end
+
+    # Create new Dog
+    dog = Dog.new
+    dog.id = 5
+    dog.title = "Bunny"
+    dog.age = 2
+    if dog.valid?
+      dog.save
+    end
+
+    # Find All
+    dogs = Dog.all
+
+    # Find by Primary key
+    dog = Dog.find_by_pk(1)
+
+    # Find by attributes
+    dogs = Dog.where({age: 5})
+
+    # Destroy all
+    Dog.destroy_all
 
 ## Contributing
 
