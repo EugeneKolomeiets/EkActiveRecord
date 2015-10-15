@@ -7,16 +7,12 @@ Basic ActiveRecord Gem
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ek_active_record'
+gem 'ek_active_record', :git => 'git@github.com:EugeneKolomeiets/EkActiveRecord.git'
 ```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ek_active_record
+    $ bundle install
 
 ## Usage
 
