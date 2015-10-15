@@ -113,7 +113,7 @@ module EkActiveRecord
         options.each do |key, value|
           case key
             when :presence
-              return false if (value == true && (model_value.nil? || model_value.strip.empty?))
+              return false if (value == true && (model_value.nil? || (model_value.is_a?(String) && model_value.strip.empty?)))
             when :min
               return false if (![Fixnum, Float].include?(model_value.class) || model_value < value)
             when :max
